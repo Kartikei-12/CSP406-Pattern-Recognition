@@ -14,7 +14,6 @@ import numpy as np
 import pandas as pd
 import nltk
 from nltk.stem import WordNetLemmatizer
-# from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 
 # Run Following download first time when running
 nltk.download('stopwords')
@@ -81,14 +80,6 @@ def preprocess_dataset(dataset):
         sen, egram = preprocess_sentence(data_[i])
         data_[i] = egram
         data3_.append(' '.join(sen))
-    
-    # data_scores = tfidf_vectorizer.fit_transform(data2_)
-    # features = tfidf_vectorizer.get_feature_names() 
-    # word2tfidf = dict(zip(features, tfidf_vectorizer.idf_))
-    # word2tfidf = pd.DataFrame(list(zip(features, tfidf_vectorizer.idf_)), columns = ['Term', 'Score'])
-    # word2tfidf = word2tfidf.sort_values('Score', ascending = False)
-    # word2tfidf.reset_index(drop = True, inplace = True)
-    # print(word2tfidf.head(20))
 
 def calculate_tfidf(term, document):
     """"""
